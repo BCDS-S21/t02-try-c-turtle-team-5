@@ -12,23 +12,55 @@ using namespace std; //this makes it possible to use cin and cout without std::
 int main() {
 	ct::TurtleScreen scr;
 
-	scr.bgcolor({ "white" });
+	scr.bgcolor({ "blue" });
 	ct::Turtle turtle(scr);
 
 	turtle.speed(ct::TS_SLOWEST);
-	turtle.fillcolor({ "purple" });
+	turtle.fillcolor({ "green" });
 	turtle.begin_fill();
-	for (int i = 0; i < 4; i++) {
-		turtle.forward(50);
-		turtle.right(90);
+  turtle.penup();
+  turtle.goTo(-100,0);
+  turtle.pendown();
+	for (int i = 0; i < 3; i++) {
+		turtle.forward(200);    // making upside down triangle
+		turtle.right(120);
 	}
 	turtle.end_fill();
+  turtle.fillcolor({ "green" });
+	turtle.begin_fill();
+  turtle.penup();
+  turtle.goTo(-100,0);
+  turtle.pendown();
+  turtle.right(180);
+	for (int i = 0; i < 3; i++) {
+		turtle.right(120);
+    turtle.forward(100);
+	}
+  turtle.right(180);
+  turtle.forward(100);
+  turtle.right(180);
+	for (int i = 0; i < 3; i++) {
+		turtle.right(120);
+    turtle.forward(100);
+	}
+	turtle.end_fill();
+
 	turtle.penup();
+
 	turtle.hideturtle();
 	turtle.forward(100);
 	turtle.pendown();
-	turtle.fillcolor({ "blue" });
-	turtle.write("I love Data Structures!");
+	turtle.fillcolor({ "pink" });
+  turtle.goTo(15,0);
+  turtle.penup();
+	turtle.write("Kristi");
+  turtle.forward(50);
+  turtle.write("Micho");
+  turtle.back(25);
+  turtle.left(90);
+  turtle.forward(50);
+  turtle.write("Taran");
+  
 
 
 	scr.exitonclick();  //exists graphics screen
